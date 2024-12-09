@@ -26,6 +26,8 @@ int	ft_printf(const char *str, ...)
 				char_counter += ft_puthex(va_arg(args, unsigned int), "0123456789abcdef");
 			if (*str_copy == 'X')
 				char_counter += ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF");
+			if(*str_copy == 'p')
+				char_counter += ft_putptr(va_arg(args, unsigned long long));
 		}
 		else
 		{

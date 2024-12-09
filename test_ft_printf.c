@@ -139,11 +139,35 @@ void	test_hex(void)
 
 	printf("\n");
 }
+void    test_ptr(void)
+{
+	int	test;
+	int	rest;
+    int value = 42;
+    int *ptr;
+
+    ptr = &value;
+
+	printf("## Testing PTR ##\n");
+
+
+	test = printf("Test\t :%p\n", ptr);
+	rest = ft_printf("Rest\t :%p\n", ptr);
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
+
+	test = printf("Test\t :%p\n", (void *)0);
+	rest = ft_printf("Rest\t :%p\n",(void *)0);
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
+}
+
 int	main(void)
 {
 	// test_int();
 	// test_decimal();
 	// test_str();
 	// test_unsigned_decimal();
-	test_hex();
+	// test_hex();
+    test_ptr();
 }
