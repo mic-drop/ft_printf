@@ -1,18 +1,21 @@
 #include "libftprintf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int i;
+	int counter;
 
+	counter = 0;
 	if (s == NULL)
 	{
-		ft_putstr("(null)");
-		return;
+		counter += ft_putstr("(null)");
+		return (counter);
 	}
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		counter += ft_putchar(s[i]);
 		i++;
 	}
+	return (counter);
 }

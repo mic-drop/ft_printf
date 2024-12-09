@@ -7,8 +7,8 @@
 # include <unistd.h>
 
 int		ft_printf(const char *, ...);
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(long nb);
-void	ft_puthex(unsigned long nb);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(long nb);
+int	ft_puthex(unsigned long nb, char *hex);
 #endif
