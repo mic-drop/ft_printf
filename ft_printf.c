@@ -6,20 +6,20 @@
 /*   By: mserra-p <mserra-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:34:17 by mserra-p          #+#    #+#             */
-/*   Updated: 2024/12/11 14:54:16 by mserra-p         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:11:43 by mserra-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	handle_percentage_exception(char *str_copy)
+static int	handle_percentage_exception(char str_copy)
 {
 	ft_putchar('%');
-	ft_putchar(*str_copy);
+	ft_putchar(str_copy);
 	return (2);
 }
 
-static int	ft_handle_conversions(char **str_copy, va_list args)
+static int	ft_handle_conversions(char *str_copy, va_list args)
 {
 	int	char_counter;
 
@@ -29,7 +29,7 @@ static int	ft_handle_conversions(char **str_copy, va_list args)
 	if (*str_copy == 'u')
 		char_counter += ft_putnbr(va_arg(args, unsigned int));
 	if (*str_copy == 'c')
-		char_counter += ft_putchar(va_arg(args, char));
+		char_counter += ft_putchar(va_arg(args, int));
 	if (*str_copy == 's')
 		char_counter += ft_putstr(va_arg(args, char *));
 	if (*str_copy == 'x')
@@ -61,7 +61,7 @@ int	ft_printf(const char *str, ...)
 		if (*str_copy == '%' && *(str_copy + 1))
 		{
 			str_copy++;
-			char_counter += ft_handle_conversions(*str_copy, args);
+			char_counter += ft_handle_conversions(str_copy, args);
 		}
 		else
 		{

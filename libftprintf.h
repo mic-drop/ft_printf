@@ -6,7 +6,7 @@
 /*   By: mserra-p <mserra-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:36:07 by mserra-p          #+#    #+#             */
-/*   Updated: 2024/12/11 14:42:02 by mserra-p         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:04:29 by mserra-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_printf(const char *str, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(long nb);
+int	ft_putptr(unsigned long long ptr);
 int	ft_puthex(unsigned long nb, char *hex);
 #endif

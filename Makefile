@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # Library name
-NAME = libft.a
+NAME = libftprintf.a
 
 # Source files (all .c files in the current directory)
 SRC = \
@@ -12,8 +12,7 @@ SRC = \
 	ft_putchar.c \
 	ft_putnbr.c \
 	ft_putptr.c \
-	ft_putstr.c \
-	ft_putendl_fd.c ft_putnbr_fd.c
+	ft_putstr.c
 
 # Object files
 OBJ = $(SRC:.c=.o)
