@@ -5,7 +5,7 @@ int	ft_printf(const char *str, ...)
 	va_list args;
 	va_start(args, str);
 	char *str_copy;
-	char char_counter;
+	int char_counter;
 
 	str_copy = (char *)str;
 	char_counter = 0;
@@ -28,6 +28,8 @@ int	ft_printf(const char *str, ...)
 				char_counter += ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF");
 			if(*str_copy == 'p')
 				char_counter += ft_putptr(va_arg(args, unsigned long long));
+			if(*str_copy == '%')
+				char_counter += ft_putchar('%');
 		}
 		else
 		{

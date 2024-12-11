@@ -162,6 +162,51 @@ void    test_ptr(void)
 	printf("Result wrote\t %d chars\n", rest);
 }
 
+void	test_percentage(void)
+{
+	int	test;
+	int	rest;
+	printf("## Testing Percentage ##\n");
+	test = printf("Test\t :%%\n");
+	rest = ft_printf("Rest\t :%%\n");
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
+
+	test = printf("Test\t :%%d\n");
+	rest = ft_printf("Rest\t :%%d\n");
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
+}
+
+void test_all(void)
+{
+	int	test;
+	int	rest;
+	char *name = "Alice";
+	char *brother = "John";
+
+
+	printf("## Testing ALL ##\n");
+	// test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
+	test = printf("Test\t :\n%s has %d apples and %i oranges.\n", name, 5, 6);
+	printf("Test wrote\t %d chars\n", test);
+	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges.\n", name, 5, 6);
+	printf("Result wrote\t %d chars\n", rest);
+
+	test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges.\n", name, 5, 6, 4294967295,brother, 7, 8);
+	printf("Test wrote\t %d chars\n", test);
+	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges.\n", name, 5, 6, 4294967295,brother, 7, 8);
+	printf("Result wrote\t %d chars\n", rest);
+
+	test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
+	printf("Test wrote\t %d chars\n", test);
+	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
+	printf("Result wrote\t %d chars\n", rest);
+	// printf("Test wrote\t %d chars\n", test);
+	// printf("Result wrote\t %d chars\n", rest);
+
+}
+
 int	main(void)
 {
 	// test_int();
@@ -169,5 +214,7 @@ int	main(void)
 	// test_str();
 	// test_unsigned_decimal();
 	// test_hex();
-    test_ptr();
+    // test_ptr();
+	//test_percentage();
+	test_all();
 }
