@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mserra-p <mserra-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/11 14:35:05 by mserra-p          #+#    #+#             */
+/*   Updated: 2024/12/11 14:39:07 by mserra-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 int	ft_putnbr(long nb)
 {
-	char c;
-	int counter;
+	char	c;
+	int		counter;
 
 	counter = 0;
 	if (nb < 0)
 	{
-		counter += ft_putchar('-'); // Print negative sign
-		nb = -nb;                  // Convert to positive
+		counter += ft_putchar('-');
+		nb = -nb;
 	}
 	if (nb >= 10)
 	{
-		counter += ft_putnbr(nb / 10); // Recursively print higher digits
+		counter += ft_putnbr(nb / 10);
 	}
-	c = (nb % 10) + '0'; // Get the last digit and convert to a character
+	c = (nb % 10) + '0';
 	counter += ft_putchar(c);
 	return (counter);
 }
