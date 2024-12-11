@@ -177,8 +177,8 @@ void	test_percentage(void)
 	printf("Test wrote\t %d chars\n", test);
 	printf("Result wrote\t %d chars\n", rest);
 	
-	test = printf("Test\t :%b\n");
-	rest = ft_printf("Rest\t :%b\n");
+	test = printf("Test\t :%k\n");
+	rest = ft_printf("Rest\t :%k\n");
 	printf("Test wrote\t %d chars\n", test);
 	printf("Result wrote\t %d chars\n", rest);
 	
