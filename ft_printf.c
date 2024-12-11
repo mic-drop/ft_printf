@@ -28,8 +28,13 @@ int	ft_printf(const char *str, ...)
 				char_counter += ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF");
 			if(*str_copy == 'p')
 				char_counter += ft_putptr(va_arg(args, unsigned long long));
-			if(*str_copy == '%')
+			if(*str_copy == '%')	
 				char_counter += ft_putchar('%');
+			else
+			{
+				char_counter += ft_putchar('%');
+				char_counter += ft_putchar(*str_copy);
+			}
 		}
 		else
 		{

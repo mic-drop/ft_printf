@@ -176,6 +176,16 @@ void	test_percentage(void)
 	rest = ft_printf("Rest\t :%%d\n");
 	printf("Test wrote\t %d chars\n", test);
 	printf("Result wrote\t %d chars\n", rest);
+	
+	test = printf("Test\t :%b\n");
+	rest = ft_printf("Rest\t :%b\n");
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
+	
+	test = printf("Test\t :%\n");
+	rest = ft_printf("Rest\t :%\n");
+	printf("Test wrote\t %d chars\n", test);
+	printf("Result wrote\t %d chars\n", rest);
 }
 
 void test_all(void)
@@ -186,25 +196,41 @@ void test_all(void)
 	char *brother = "John";
 
 
-	printf("## Testing ALL ##\n");
-	// test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
-	test = printf("Test\t :\n%s has %d apples and %i oranges.\n", name, 5, 6);
+	printf("\n## Testing ALL ##\n");
+
+	test = printf("Test:\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
 	printf("Test wrote\t %d chars\n", test);
-	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges.\n", name, 5, 6);
+	rest = ft_printf("Rest:\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
 	printf("Result wrote\t %d chars\n", rest);
 
-	test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges.\n", name, 5, 6, 4294967295,brother, 7, 8);
-	printf("Test wrote\t %d chars\n", test);
-	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges.\n", name, 5, 6, 4294967295,brother, 7, 8);
-	printf("Result wrote\t %d chars\n", rest);
+}
 
-	test = printf("Test\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
-	printf("Test wrote\t %d chars\n", test);
-	rest = ft_printf("Rest\t :\n%s has %d apples and %i oranges. They have %u water dropplets.\n%s has %d apples and %i oranges. They have %u water dropplets.\n", name, 5, 6, 4294967295,brother, 7, 8, 4294967294);
-	printf("Result wrote\t %d chars\n", rest);
-	// printf("Test wrote\t %d chars\n", test);
-	// printf("Result wrote\t %d chars\n", rest);
-
+void	test_vanda(void)
+{
+	ft_printf("Hello World!\n");
+	printf("Hello World!\n");
+	ft_printf("This is a test\n");
+	printf("This is a test\n");
+	ft_printf("This is a test with a null pointer: %s\n", NULL);
+	printf("This is a test with a null pointer: %s\n", NULL);
+	ft_printf("This is a test with a char: %c\n", 'c');
+	printf("This is a test with a char: %c\n", 'c');
+	ft_printf("This is a test with a string: %s\n", "string");
+	printf("This is a test with a string: %s\n", "string");
+	ft_printf("This is a test with a decimal: %d\n", 42);
+	printf("This is a test with a decimal: %d\n", 42);
+	ft_printf("This is a test with an intenger: %i\n", 42);
+	printf("This is a test with an intenger: %i\n", 42);
+	ft_printf("This is a test with an unsigned int: %u\n", 42);
+	printf("This is a test with an unsigned int: %u\n", 42);
+	ft_printf("This is a test with a hexadecimal: %x\n", 42);
+	printf("This is a test with a hexadecimal: %x\n", 42);
+	ft_printf("This is a test with a HEXADECIMAL: %X\n", 42);
+	printf("This is a test with a HEXADECIMAL: %X\n", 42);
+	ft_printf("This is a test with a pointer: %p\n", (void *)42);
+	printf("This is a test with a pointer: %p\n", (void *)42);
+	ft_printf("This is a test with a percent: %%\n");
+	printf("This is a test with a percent: %%\n");
 }
 
 int	main(void)
@@ -215,6 +241,7 @@ int	main(void)
 	// test_unsigned_decimal();
 	// test_hex();
     // test_ptr();
-	//test_percentage();
-	test_all();
+	test_percentage();
+	// test_all();
+	// test_vanda();
 }
