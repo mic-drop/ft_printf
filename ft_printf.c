@@ -6,13 +6,13 @@
 /*   By: mserra-p <mserra-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:34:17 by mserra-p          #+#    #+#             */
-/*   Updated: 2024/12/11 14:36:36 by mserra-p         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:54:16 by mserra-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	handle_percentage_exception(char **str_copy)
+static int	handle_percentage_exception(char *str_copy)
 {
 	ft_putchar('%');
 	ft_putchar(*str_copy);
