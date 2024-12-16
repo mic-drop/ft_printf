@@ -6,11 +6,12 @@
 /*   By: mserra-p <mserra-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:34:17 by mserra-p          #+#    #+#             */
-/*   Updated: 2024/12/11 15:11:43 by mserra-p         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:45:47 by mserra-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdio.h>
 
 static int	handle_percentage_exception(char str_copy)
 {
@@ -23,24 +24,25 @@ static int	ft_handle_conversions(char *str_copy, va_list args)
 {
 	int	char_counter;
 
+	printf("\nThis is *str_copy: |%c|\n", *str_copy);
 	char_counter = 0;
 	if (*str_copy == 'i' || *str_copy == 'd')
 		char_counter += ft_putnbr(va_arg(args, int));
-	if (*str_copy == 'u')
+	else if (*str_copy == 'u')
 		char_counter += ft_putnbr(va_arg(args, unsigned int));
-	if (*str_copy == 'c')
+	else if (*str_copy == 'c')
 		char_counter += ft_putchar(va_arg(args, int));
-	if (*str_copy == 's')
+	else if (*str_copy == 's')
 		char_counter += ft_putstr(va_arg(args, char *));
-	if (*str_copy == 'x')
+	else if (*str_copy == 'x')
 		char_counter += ft_puthex(va_arg(args, unsigned int),
 				"0123456789abcdef");
-	if (*str_copy == 'X')
+	else if (*str_copy == 'X')
 		char_counter += ft_puthex(va_arg(args, unsigned int),
 				"0123456789ABCDEF");
-	if (*str_copy == 'p')
+	else if (*str_copy == 'p')
 		char_counter += ft_putptr(va_arg(args, unsigned long long));
-	if (*str_copy == '%')
+	else if (*str_copy == '%')
 		char_counter += ft_putchar('%');
 	else
 		char_counter += handle_percentage_exception(*str_copy);

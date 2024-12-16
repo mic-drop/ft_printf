@@ -241,7 +241,7 @@ int	main(void)
 	// test_unsigned_decimal();
 	// test_hex();
     // test_ptr();
-	test_percentage();
-	// test_all();
+	// test_percentage();
+	test_all();
 	// test_vanda();
 }
