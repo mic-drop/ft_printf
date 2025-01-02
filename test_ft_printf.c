@@ -186,6 +186,11 @@ void	test_percentage(void)
 	rest = ft_printf("Rest\t :%\n");
 	printf("Test wrote\t %d chars\n", test);
 	printf("Result wrote\t %d chars\n", rest);
+	
+	test = printf("Test\t :%");
+	rest = ft_printf("Rest\t :%");
+	printf("Test wrote\t %d chars\n", test);
+	printf("\nResult wrote\t %d chars\n", rest);
 }
 
 void test_all(void)
@@ -241,7 +246,7 @@ int	main(void)
 	// test_unsigned_decimal();
 	// test_hex();
     // test_ptr();
-	// test_percentage();
-	test_all();
+	test_percentage();
+	// test_all();
 	// test_vanda();
 }
